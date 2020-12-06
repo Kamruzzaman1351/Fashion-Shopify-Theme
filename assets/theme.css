@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
+
+body {
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    color: #757575;
+    font-size: 15px;
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: 0;
+    color: #000;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"] {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+    outline: none;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.heading-text {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 100;
+    border-bottom: 1px solid #dedede;
+}
+
+.req {
+    color: #c0392b;
+}
+
+.forgot-password-text {
+    margin-left: 30px;
+}
+
+p.with-icons i {
+    width: 20px;
+}
+
+.account .table thead>tr>th {
+    border-top: 0;
+}
+
+.account .table tbody>tr>td {
+    vertical-align: middle;
+}
+
+.address-edit,
+.edit-address-submit,
+.edit-address-cancel {
+    display: none;
+}
+
+.form-control {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.btn-main,
+.btn-solid-border,
+.btn-transparent,
+.btn-small {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 14px 35px;
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 0;
+}
+
+.btn-main.btn-icon i,
+.btn-icon.btn-solid-border i,
+.btn-icon.btn-transparent i,
+.btn-icon.btn-small i {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.btn-main:hover,
+.btn-solid-border:hover,
+.btn-transparent:hover,
+.btn-small:hover {
+    background: black;
+    color: #fff;
+}
+
+.btn-solid-border {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+}
+
+.btn-transparent {
+    background: transparent;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn-transparent:hover {
+    background: transparent;
+    color: #000;
+}
+
+.btn-large {
+    padding: 20px 45px;
+}
+
+.btn-large.btn-icon i {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.btn-small {
+    padding: 8px 25px;
+    font-size: 10px;
+}
+
+.btn-round {
+    border-radius: 4px;
+}
+
+.btn-round-full {
+    border-radius: 50px;
+}
+
+.btn.active:focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0;
+}
+
+.section {
+    padding: 30px 0;
+}
+
+.bg-gray {
+    background: #f9f9f9;
+}
+/*=================================================================
+  Tabs
+==================================================================*/
+
+.nav-tabs {
+    border-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.nav-tabs li {
+    margin-right: 5px;
+}
+
+.nav-tabs li .nav-link {
+    border-radius: 0;
+    background: #dedede;
+}
+
+.nav-tabs li .nav-link.active {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #ffffff;
+}
+
+.nav-tabs a {
+    border-radius: 0;
+    background: #f9f9f9;
+}
+
+.nav-tabs a:hover {
+    border: 1px solid transparent;
+    background: #000;
+    color: #fff;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #dedede;
+}
+
+/*=================================================================
+  Header
+==================================================================*/
+.top-header .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #dedede;
+}
+
+.top-header .dropdown-menu {
+    left: auto;
+    right: 0;
+    max-width: 300px;
+}
+
+@media (max-width: 480px) {
+    .top-header .dropdown-menu {
+        right: 0;
+        left: 0;
+        max-width: 100%;
+    }
+}
+
+.top-header .contact-number {
+    font-size: 12px;
+    color: #333;
+}
+
+@media (max-width: 480px) {
+    .top-header .contact-number {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header .contact-number {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+.top-header .contact-number i {
+    margin-right: 4px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .top-header .top-menu {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+.top-header .top-menu>li>a {
+    color: #333;
+    font-size: 15px;
+    padding: 0 8px;
+}
+
+.top-header .top-menu>li>a:hover,
+.top-header .top-menu>li>a:focus {
+    background: transparent;
+}
+
+.top-header .top-menu>li .fa {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+@media (max-width: 480px) {
+    .top-header .logo {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header .logo {
+        padding: 10px;
+    }
+}
+
+.top-header .logo a {
+    display: inline-block;
+}
+
+.top-menu li svg {
+    margin-right: 5px;
+}
+
+.navbar-nav>li>a {
+    color: #333;
+    font-size: 14px;
+    padding: 20px 15px;
+    text-transform: uppercase;
+    transition: .2s ease-in-out 0s;
+    border: 1px solid transparent;
+}
+
+/*=================================================================
+  Title
+==================================================================*/
+.title {
+    padding: 50px 0 30px;
+}
+
+.title h2 {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/*=================================================================
+  Navbar Dropdown
+==================================================================*/
+.navbar-nav .dropdown .dropdown-menu a {
+    color: #222;
+    font-size: 12px;
+    border: 1px solid transparent;
+    display: block;
+    padding: 8px 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: .3s all;
+}
+
+.navbar-nav .dropdown .dropdown-menu a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: none;
+    opacity: 1;
+    display: block;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1;
+    visibility: visible;
+    color: #777;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+.dropdown .dropdown-menu {
+    border-radius: 0;
+    padding: 15px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: .3s all;
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    transition: visibility 0.2s, opacity 0.2s, -webkit-transform 500ms cubic-bezier(0.43, 0.26, 0.11, 0.99);
+    transition: visibility 0.2s, opacity 0.2s, transform 500ms cubic-bezier(0.43, 0.26, 0.11, 0.99);
+    transition: visibility 0.2s, opacity 0.2s, transform 500ms cubic-bezier(0.43, 0.26, 0.11, 0.99), -webkit-transform 500ms cubic-bezier(0.43, 0.26, 0.11, 0.99);
+}
+
+.dropdown .dropdown-menu.full-width {
+    width: 700px;
+    left: -200px;
+}
+
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #777;
+    white-space: nowrap;
+}

@@ -1,0 +1,187 @@
+<section class="top-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-4">
+        {% if section.settings.store_phone_number %}
+          <div class="contact-number">
+              <i class="fa fa-phone"></i>
+              <span>{{ section.settings.store_phone_number }}</span>          
+          
+          </div>
+        {% endif %}
+      </div>
+
+        <div class="col-md-4 col-xs-12 col-sm-4">
+          <!-- Site Logo -->
+          <div class="logo text-center">
+            {%- if section.settings.logo -%}
+              {%- assign img_url = section.settings.logo | img_url: '1x1' -%}
+                <a href="{{ routes.root_url }}">
+                    {%- capture logo_alt -%}{{ section.settings.logo.alt | default: shop.name }}{%- endcapture -%}
+                    <img class="" 
+                      src="{{ section.settings.logo | img_url: '300x300' }}" 
+                      data-src="{{ img_url }}"
+                      alt="{{ logo_alt | escape }}"
+                      data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+                      data-sizes="auto"
+                      style="max-width:{{section.settings.logo_max_width}}px">
+                    <noscript>
+                      {%- capture logo_size -%}{{ section.settings.logo_max_width | escape }}x{%- endcapture -%}
+                      <img class="" 
+                            src="{{ section.settings.logo | img_url: logo_size }}" 
+                            srcset="{{ section.settings.logo | img_url: logo_size }} 1x, {{ section.settings.logo | img_url: logo_size, scale: 2 }} 2x"
+                            alt="{{ section.settings.logo.alt | default: shop.name }}"
+                            style="max-width:{{section.settings.logo_max_width}}px">
+                    </noscript>
+
+                  </a>
+                {%- else -%}
+                     
+                  <a href="{{ routes.root_url }}">
+                  <!-- Text Logo here -->
+                    {% if section.settings.text_logo %}
+                      <svg width="300px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40" font-family="AustinBold, Austin" font-weight="bold">
+                            <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">                      
+                              <text id="fashion">
+                                <tspan x="108.94" y="325">{{ section.settings.text_logo | default: shop.name }}</tspan>
+                              </text>                          
+                            </g>
+                          </g>
+                      </svg>
+                            
+                    {% endif %}               
+                    
+                  </a>
+              {%- endif -%}
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+          <ul class="top-menu list-inline float-right">
+            <li class="list-inline-item"><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+            <li class="list-inline-item"><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Main Menu -->
+  
+  {%- assign menu = linklists[section.settings.menu_list] -%}
+  {%- if menu != blank -%}
+    
+    <section class="menu">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              {%- for link in linklists[section.settings.menu_list].links -%}
+                {%- if link.links != blank -%}
+                {%- if link.levels >= 2 -%}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ link.url }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ link.title }}
+                    </a>
+                    
+                      <div class="dropdown-menu full-width" aria-labelledby="navbarDropdown">
+                        <div class="row">                        
+                          {%- for childlink in link.links -%}
+                            {%- if childlink.links != blank -%}
+                              <div class="col-sm">
+                                <div class="dropdown-header">{{ childlink.title }}</div>
+                                <div class="dropdown-divider"></div> 
+                                {%- for grandchildlink in childlink.links -%}
+                                  <a href="{{grandchildlink.url}}">{{ grandchildlink.title }}</a>
+                                {%- endfor -%}                
+                              </div> 
+                              {%- else -%}
+                                <div class="col-sm">
+                                  <div class="dropdown-header">{{ childlink.title }}</div>
+                                  <div class="dropdown-divider"></div>
+                                  <a href="{{grandchildlink.url}}">{{ childlink.title }}</a>                                              
+                                </div>                                         
+                            {%- endif -%}                          
+                          {%- endfor -%}
+                        </div>
+                      </div> 
+                  </li>
+                    {%- else -%}
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ link.title }}
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                        {%- for childlink in link.links -%}
+                          <a class="dropdown-item" href="{{childlink.url}}">{{ childlink.title }}</a>
+                          {% unless forloop.last %} 
+                          <div class="dropdown-divider"></div>
+                          {% endunless %}
+                        {%- endfor -%}                       
+                        
+                       </div>
+                    </li>
+                  {%- endif -%}
+                  {%- else -%}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{link.url}}">{{ link.title }}<span class="sr-only">(current)</span></a>
+                    </li>
+                {%- endif -%}
+              {%- endfor -%}
+              
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    
+    
+  {%- endif -%}
+    
+ 
+  
+
+  {% schema %}
+  {
+      "name": {
+          "en": "Header Section"
+      },
+      "settings": [
+          {
+              "type": "text",
+              "id": "store_phone_number",
+              "label": "Phone Number",
+              "default": "+8801912372356"
+          },
+          {
+              "type": "text",
+              "id": "text_logo",
+              "label": "Shop Name"
+          },
+          {
+              "type": "image_picker",
+              "id": "logo",
+              "label": "Logo"
+          },
+          {
+            "type": "range",
+            "id": "logo_max_width",
+            "label": "Logo Width",
+            "min": 80,
+            "max": 280,
+            "step": 5,
+            "unit": "px",
+            "default":120
+          },
+          {
+            "type": "link_list",
+            "id": "menu_list",
+            "label": "Main Navigation",
+            "default": "main-menu"
+          }
+      ]
+  }
+  {% endschema %}
