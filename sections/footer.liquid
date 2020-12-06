@@ -1,0 +1,104 @@
+  <footer class="footer section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="social-media">
+            <li>
+              <a href="{{section.settings.facebook_share_link}}">
+                <i class="fa fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{section.settings.instagram_share_link}}">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{section.settings.twitter_share_link}}">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{section.settings.pinterest_share_link}}">
+                <i class="fa fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="footer-menu">
+            {%- for link in linklists[section.settings.footer_link].links -%}
+                <li>
+                    <a href="{{link.url}}">{{link.title}}</a>
+                </li>
+            {%- endfor -%}
+          </ul>
+          <p class="copyright-text">Copyright &#9400; {{section.settings.copyright | default: shop.name}}</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {% schema %}
+  {
+      "name": {
+        "en": "Footer Section"
+    },
+      "settings":[
+        {
+            "type": "text",
+            "id": "facebook_share_link",
+            "label": "Facebook Link",
+            "default": "https:\/\/facebook.com\/",
+            "info": {
+                "en": "https:\/\/facebook.com\/shopify"
+            }
+            
+        },
+        {
+            "type": "text",
+            "id": "twitter_share_link",
+            "label": "Twitter Link",
+            "default": "https:\/\/twitter.com\/",
+            "info": {
+                "en": "https:\/\/twitter.com\/shopify"
+            }
+            
+        },
+        {
+            "type": "text",
+            "id": "instagram_share_link",
+            "label": "Instagram Link",
+            "default": "https:\/\/instagram.com\/",
+            "info": {
+                "en": "https:\/\/instagram.com\/shopify"
+            }
+            
+        },
+        {
+            "type": "text",
+            "id": "pinterest_share_link",
+            "label": "Pinterest Link",
+            "default": "https:\/\/pinterest.com\/",
+            "info": {
+                "en": "https:\/\/pinterest.com\/shopify"
+            }
+            
+        },
+        {
+            "type": "link_list",
+            "id": "footer_link",
+            "default": "footer",
+            "label": "Footer Navigation"
+        },
+        {
+            "type": "text",
+            "id": "copyright",
+            "label": "Copyright Name",
+            "info": {
+                "en": "Copyright Ⓒ"
+            }
+        }
+
+      ]
+      
+  }
+  {% endschema %}

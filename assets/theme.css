@@ -396,3 +396,44 @@ p.with-icons i {
     color: #777;
     white-space: nowrap;
 }
+
+/*=================================================================
+  Footer
+==================================================================*/
+.footer {
+    background: #F7F7F7;
+    padding: 50px 0;
+}
+
+.footer .footer-menu {
+    margin-top: 30px;
+}
+
+.footer .footer-menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer .footer-menu li a {
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.footer .copyright-text {
+    margin-top: 20px;
+}
+
+.social-media li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-media li a {
+    padding: 8px 10px;
+}
+
+.social-media li a i {
+    font-size: 20px;
+    color: #555;
+}
