@@ -1,3 +1,18 @@
+<style>
+    .footer{
+        background: {{section.settings.footer_background_color}} ;
+    }
+    .footer .footer-menu li a {
+    color:{{section.settings.footer_menu_color}};
+    }
+
+    .social-media li a i {
+        color: {{section.settings.social_icon_color}};
+        }
+</style>
+
+
+
   <footer class="footer section text-center">
     <div class="container">
       <div class="row">
@@ -96,6 +111,24 @@
             "info": {
                 "en": "Copyright Ⓒ"
             }
+        },
+        {
+            "type": "color",
+            "id": "footer_background_color",
+            "label":"Footer Background Color",
+            "default": "#F7F7F7"
+        },
+        {
+            "type": "color",
+            "id": "footer_menu_color",
+            "label":"Footer Menu Color",
+            "default": "#333"
+        },
+        {
+            "type": "color",
+            "id": "social_icon_color",
+            "label":"Social Icon Color",
+            "default": "#555"
         }
 
       ]
